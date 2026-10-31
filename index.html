@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Cloud Path — You Are The Journey</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- LANDING -->
+  <section id="screen-landing" class="screen active">
+    <div class="hero-bg"></div>
+    <div class="container center">
+      <div class="brand">You Are The Journey</div>
+      <h1 class="hero-title">Find Your Cloud Path</h1>
+      <p class="hero-sub">
+        You have more to bring to tech than you think.<br />
+        Answer 9 questions and we'll show you exactly where you fit — and how to get there.
+      </p>
+      <p class="hero-meta">Takes about 4 minutes &middot; 100% free &middot; No credit card</p>
+      <button class="btn-primary" onclick="App.start()">Start my journey &rarr;</button>
+      <p class="hero-credit">
+        Built by <strong>Endah Bongo-Awah</strong> &middot; Cloud Platform Engineer &middot; AWS Community Builder
+      </p>
+    </div>
+  </section>
+
+  <!-- QUESTIONNAIRE -->
+  <section id="screen-questions" class="screen">
+    <div class="container">
+      <div class="q-header">
+        <div class="brand-small">You Are The Journey</div>
+        <div class="progress-wrap">
+          <div class="progress-bar"><div id="progress-fill" class="progress-fill"></div></div>
+          <span id="progress-label" class="progress-label">Question 1 of 9</span>
+        </div>
+      </div>
+      <div id="question-area" class="question-area"></div>
+      <div class="q-nav">
+        <button class="btn-ghost" id="btn-back" onclick="App.back()" style="display:none">&larr; Back</button>
+        <button class="btn-primary" id="btn-next" onclick="App.next()" disabled>Continue &rarr;</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- EMAIL CAPTURE -->
+  <section id="screen-email" class="screen">
+    <div class="container center">
+      <div class="brand-small">You Are The Journey</div>
+      <div class="email-icon">&#9993;</div>
+      <h2 id="email-heading">One last step</h2>
+      <p class="email-sub">
+        Your personalised cloud path is ready. Enter your email and we'll send you a copy
+        plus the exact free resources to start this week.
+      </p>
+      <div class="email-form">
+        <input type="email" id="email-input" placeholder="your@email.com" oninput="App.validateEmail()" />
+        <p class="email-note">No spam. Unsubscribe at any time.</p>
+        <button class="btn-primary" id="btn-reveal" onclick="App.reveal()" disabled>Show my cloud path &rarr;</button>
+        <button class="btn-ghost-sm" onclick="App.skipEmail()">Skip &mdash; just show me the result</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESULTS -->
+  <section id="screen-result" class="screen">
+    <div class="container">
+      <div class="brand-small">You Are The Journey</div>
+      <div id="result-header" class="result-header"></div>
+      <div id="result-bridge" class="result-card card-bridge"></div>
+      <div id="result-roles" class="result-roles"></div>
+      <div id="result-plan" class="result-card card-plan"></div>
+      <div id="result-fear" class="result-card card-fear"></div>
+
+      <div class="result-cta-block">
+        <p class="result-cta-label">Ready to make this real?</p>
+        <a href="https://youarethejourney.academy/accelerator" class="btn-primary" target="_blank">
+          Join the founding cohort waitlist &rarr;
+        </a>
+        <a href="https://youarethejourney.academy/scorecard" class="btn-ghost-link" target="_blank">
+          Take the Cloud Career Scorecard
+        </a>
+      </div>
+
+      <div class="endah-note">
+        <div class="endah-avatar">E</div>
+        <div>
+          <blockquote>
+            "I went from banking to Cloud Platform Engineer with three kids, a mortgage, and a full-time job.
+            I didn't have a map. You do now."
+          </blockquote>
+          <cite>&mdash; Endah Bongo-Awah, Cloud Platform Engineer &middot; AWS Community Builder &middot; Founder, YATJ</cite>
+        </div>
+      </div>
+
+      <div class="result-share">
+        <p>Share your path</p>
+        <button class="btn-share" onclick="App.share()">Share on LinkedIn</button>
+        <button class="btn-share" onclick="App.copy()" id="btn-copy">Copy link</button>
+      </div>
+    </div>
+  </section>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
